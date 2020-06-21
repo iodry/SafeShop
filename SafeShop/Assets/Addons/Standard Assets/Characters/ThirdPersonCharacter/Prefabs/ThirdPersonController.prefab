@@ -775,6 +775,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1510,7 +1511,119 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: '
+
+    Transform ''EthanLeftToe1'' has been deleted
+
+    Transform ''EthanLeftFoot'' has been deleted
+
+    Transform ''EthanLeftLeg'' has been deleted
+
+    Transform ''EthanLeftUpLeg'' has been deleted
+
+    Transform ''EthanRightToe1'' has been deleted
+
+    Transform ''EthanRightFoot'' has been deleted
+
+    Transform ''EthanRightLeg'' has been deleted
+
+    Transform ''EthanRightUpLeg'' has been deleted
+
+    Transform ''EthanJaw'' has been deleted
+
+    Transform ''EthanLeftEye'' has been deleted
+
+    Transform ''EthanRightEye'' has been deleted
+
+    Transform ''EthanHead'' has been deleted
+
+    Transform ''EthanLeftHandIndex3'' has been deleted
+
+    Transform ''EthanLeftHandIndex2'' has been deleted
+
+    Transform ''EthanLeftHandIndex1'' has been deleted
+
+    Transform ''EthanLeftHandMiddle3'' has been deleted
+
+    Transform ''EthanLeftHandMiddle2'' has been deleted
+
+    Transform ''EthanLeftHandMiddle1'' has been deleted
+
+    Transform ''EthanLeftHandPinky3'' has been deleted
+
+    Transform ''EthanLeftHandPinky2'' has been deleted
+
+    Transform ''EthanLeftHandPinky1'' has been deleted
+
+    Transform ''EthanLeftHandRing3'' has been deleted
+
+    Transform ''EthanLeftHandRing2'' has been deleted
+
+    Transform ''EthanLeftHandRing1'' has been deleted
+
+    Transform ''EthanLeftHandThumb3'' has been deleted
+
+    Transform ''EthanLeftHandThumb2'' has been deleted
+
+    Transform ''EthanLeftHandThumb1'' has been deleted
+
+    Transform ''EthanLeftHand'' has been deleted
+
+    Transform ''EthanLeftForeArm'' has been deleted
+
+    Transform ''EthanLeftArm'' has been deleted
+
+    Transform ''EthanLeftShoulder'' has been deleted
+
+    Transform ''EthanRightHandIndex3'' has been deleted
+
+    Transform ''EthanRightHandIndex2'' has been deleted
+
+    Transform ''EthanRightHandIndex1'' has been deleted
+
+    Transform ''EthanRightHandMiddle3'' has been deleted
+
+    Transform ''EthanRightHandMiddle2'' has been deleted
+
+    Transform ''EthanRightHandMiddle1'' has been deleted
+
+    Transform ''EthanRightHandPinky3'' has been deleted
+
+    Transform ''EthanRightHandPinky2'' has been deleted
+
+    Transform ''EthanRightHandPinky1'' has been deleted
+
+    Transform ''EthanRightHandRing3'' has been deleted
+
+    Transform ''EthanRightHandRing2'' has been deleted
+
+    Transform ''EthanRightHandRing1'' has been deleted
+
+    Transform ''EthanRightHandThumb3'' has been deleted
+
+    Transform ''EthanRightHandThumb2'' has been deleted
+
+    Transform ''EthanRightHandThumb1'' has been deleted
+
+    Transform ''EthanRightHand'' has been deleted
+
+    Transform ''EthanRightForeArm'' has been deleted
+
+    Transform ''EthanRightArm'' has been deleted
+
+    Transform ''EthanRightShoulder'' has been deleted
+
+    Transform ''EthanNeck'' has been deleted
+
+    Transform ''EthanSpine2'' has been deleted
+
+    Transform ''EthanSpine1'' has been deleted
+
+    Transform ''EthanSpine'' has been deleted
+
+    Transform ''EthanHips'' has been deleted
+
+    Transform ''EthanSkeleton'' has been deleted'
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -1537,7 +1650,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149790}
-  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
@@ -1556,6 +1669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hInput: 0
+  vInput: 0
 --- !u!114 &11469404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,6 +1808,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

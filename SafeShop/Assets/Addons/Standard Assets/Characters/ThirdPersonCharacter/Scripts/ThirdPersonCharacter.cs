@@ -75,6 +75,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			UpdateAnimator(move);
 		}
 
+		public void Cough()
+		{
+			m_Animator.SetTrigger("Cough");
+			m_IsGrounded = false;
+			m_Animator.applyRootMotion = false;
+		}
+
+		public void PickUp()
+		{
+			m_Animator.SetTrigger("PickUp");
+			m_IsGrounded = false;
+			m_Animator.applyRootMotion = false;
+
+		}
+
 
 		void ScaleCapsuleForCrouching(bool crouch)
 		{

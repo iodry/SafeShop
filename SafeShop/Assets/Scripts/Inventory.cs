@@ -8,7 +8,6 @@ public class Inventory : MonoBehaviour
     public int slotNumber = 2;
     public List<IInventoryItem> mItems = new List<IInventoryItem>();
     public event EventHandler<InventoryEventArgs> ItemAdded;
-    public event EventHandler<InventoryEventArgs> ItemRemoved;
 
     public void AddItem(IInventoryItem item)
     {

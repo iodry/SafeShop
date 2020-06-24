@@ -28,7 +28,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-		private bool m_Die;
+
 
 		void Start()
 		{
@@ -90,15 +90,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		}
 
-/*		public void PickedUp()
-		{
-			m_Animator.SetBool("PickUpBool", false);
-			m_IsGrounded = true;
-			m_Animator.applyRootMotion = true;
-
-		}*/
-
-
 
 		void ScaleCapsuleForCrouching(bool crouch)
 		{
@@ -146,8 +137,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
-			//m_Animator.SetBool("Die", m_Die);
-			//m_Animator.SetTrigger("PickUp");
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
@@ -187,8 +176,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
 		}
-
-		
 
 
 		void HandleGroundedMovement(bool crouch, bool jump)

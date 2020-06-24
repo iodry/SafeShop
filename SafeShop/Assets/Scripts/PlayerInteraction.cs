@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     public PlayerManager playerManager;
     public Inventory inventory;
-    //public FixedButton aButton;
+    public FixedButton aButton;
     private IInventoryItem itemInv = null;
     public InventoryUI invPan;
     public InventoryManager inventoryManager;

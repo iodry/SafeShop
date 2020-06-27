@@ -12,6 +12,7 @@ public class PositionProjector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //controller = GetComponentInParent<EnemyController>();
         GetComponent<Projector>().fieldOfView = controller.lookRadius * 10;
         //Debug.Log("data=" + GetComponent<Projector>().fieldOfView);
 

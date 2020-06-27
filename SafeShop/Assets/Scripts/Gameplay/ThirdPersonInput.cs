@@ -5,7 +5,6 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class ThirdPersonInput : MonoBehaviour
 {
-    public FixedJoystick fixedJoystick;
     public FloatingJoystick floatingJoystick;
     private ThirdPersonUserControl control;
     // Start is called before the first frame update

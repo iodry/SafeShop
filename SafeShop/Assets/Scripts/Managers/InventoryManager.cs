@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
 {
      public TextMeshProUGUI[] shoppingList;
     public Inventory inventory;
-   // public InventoryUI invUI;
+   public InventoryUI invUI;
     private GameObject[] itemList;
     private List<IInventoryItem> checkOutInvList = new List<IInventoryItem>();
 
@@ -57,15 +57,15 @@ public class InventoryManager : MonoBehaviour
             }
         }
         inventory.mItems.Clear();
-        //invUI.RemoveItemsUI();
+        invUI.RemoveItemsUI();
         if (itemList.Length - checkOutInvList.Count>0)
         {
             int remain = itemList.Length - checkOutInvList.Count;
-            //invUI.PopUpPanel("Checked out - still " + remain + " to check out!", 1.5f);
+            invUI.PopUpPanel("Checked out - still " + remain + " to check out!", 1.5f);
         }
         else
         {
-           // invUI.PopUpPanel("Checked out!",.75f);
+           invUI.PopUpPanel("Checked out!",.75f);
         }
         
         CheckListComplete();
@@ -77,7 +77,7 @@ public class InventoryManager : MonoBehaviour
         if (itemList.Length == checkOutInvList.Count)
         {
            // Debug.Log("Complete");
-            //GameManager.instance.CompleteLevel();
+            GameManager.instance.CompleteLevel();
         }
     }
     public void StrikethroughItem(string itemName)

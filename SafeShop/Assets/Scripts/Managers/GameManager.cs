@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     private bool gameEnded = false;
     private bool levelComplete = false;
     private bool gameIsPaused = false;
-    public TimerCountDown timer;
+    private TimerCountDown timer;
     [HideInInspector] public LevelData levelData;
     /*    public float delayRestart = 2f;
         public GameObject completeLvlUI;
@@ -56,10 +56,9 @@ public class GameManager : MonoBehaviour
         levelComplete = true;
         if (gameEnded == false)
         {
-            //int nbStars = CalculateLevelStars();
-            UpdateLevelAt();// levelData.levelScores[SceneManager.GetActiveScene().buildIndex] = nbStars;
-            UpdateStarScore();// levelData.levelAt = SceneManager.GetActiveScene().buildIndex + 1;
-            SaveSystem.SaveLevelAt(levelData);
+            //UpdateLevelAt();// levelData.levelScores[SceneManager.GetActiveScene().buildIndex] = nbStars;
+            //UpdateStarScore();// levelData.levelAt = SceneManager.GetActiveScene().buildIndex + 1;
+            //SaveSystem.SaveLevelAt(levelData);
             //Debug.Log("Loop complete");
             GetComponent<UIManager>().ShowLevelComplete();
         }
@@ -215,6 +214,7 @@ public class GameManager : MonoBehaviour
     public int CalculateLevelStars()
     {
         int health = GetComponent<HealthManager>().currentHealth;
+        timer = GetComponent<TimerCountDown>();
         float time = timer.timeDuration;
         int stars = 0;
         if ((health <= 1 && time < 45 && time > 20) | (health == 2 && time < 30))

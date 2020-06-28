@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     public Inventory inventory;
-    private Transform inventoryPan;
+    //private Transform inventoryPan;
     public GameObject messagePanel ;
     public GameObject popUpPanel;
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class InventoryUI : MonoBehaviour
     private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
     {
        
-        foreach (Transform slot in transform.GetChild(0))
+        foreach (Transform slot in transform)
         {
             Image image = slot.GetChild(0).GetComponent<Image>();
             if (!image.enabled)
@@ -40,7 +40,7 @@ public class InventoryUI : MonoBehaviour
 
     public void RemoveItemsUI()
     {
-        foreach (Transform slot in transform.GetChild(0))
+        foreach (Transform slot in transform)
         {
             Image image = slot.GetChild(0).GetComponent<Image>();
             if (image.enabled)

@@ -56,9 +56,9 @@ public class GameManager : MonoBehaviour
         levelComplete = true;
         if (gameEnded == false)
         {
-            //UpdateLevelAt();// levelData.levelScores[SceneManager.GetActiveScene().buildIndex] = nbStars;
-            //UpdateStarScore();// levelData.levelAt = SceneManager.GetActiveScene().buildIndex + 1;
-            //SaveSystem.SaveLevelAt(levelData);
+            UpdateLevelAt();// levelData.levelScores[SceneManager.GetActiveScene().buildIndex] = nbStars;
+            UpdateStarScore();// levelData.levelAt = SceneManager.GetActiveScene().buildIndex + 1;
+            SaveSystem.SaveLevelAt(levelData);
             //Debug.Log("Loop complete");
             GetComponent<UIManager>().ShowLevelComplete();
         }

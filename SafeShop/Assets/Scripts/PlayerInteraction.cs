@@ -100,7 +100,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         else if (other.name == "Checkout")
         {
-            invPan.OpenMessagePanel("Proceed to checkout - Press Button");
+            invPan.OpenMessagePanel("Proceed to checkout");
             inCheckOut = true;
             //Debug.Log("Checkout active");
         }

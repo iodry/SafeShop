@@ -25,7 +25,7 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        numberOfLevels = SceneManager.sceneCountInBuildSettings - 3;
+        numberOfLevels = SceneManager.sceneCountInBuildSettings - 2;
         levelData = GameManager.instance.levelData;
 
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;

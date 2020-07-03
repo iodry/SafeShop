@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         if (levelData.levelAt < (SceneManager.GetActiveScene().buildIndex + 1))
         {
             levelData.levelAt = SceneManager.GetActiveScene().buildIndex + 1;
-            Debug.Log("Level Updated");
+            //Debug.Log("Level Updated");
         }
 
     }

@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public Camera miniMapCam;
     public Transform starLevelPan;
     public Sprite starYellow;
+    public Transform mapPlaceHolder;
 
 
     //Position of each panel
@@ -31,6 +32,7 @@ public class UIManager : MonoBehaviour
     private Vector2 posShopPan;//= new Vector2(0, -1200);
     private Vector2 posPausePan;
     private Vector2 shopPanPos;
+    private Vector2 posMiniMap;
     private bool touchedToStart = false;
 
     private void Awake()
@@ -43,7 +45,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            miniMap.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-320f, -600f), 0);
+            miniMap.GetComponent<RectTransform>().DOAnchorPos(new Vector2(1600f, 500f), 0);
             miniMap.GetComponent<RectTransform>().DOSizeDelta(new Vector2(500f, 500f), 0);
             miniMap.GetChild(0).GetComponent<RectTransform>().DOSizeDelta(new Vector2(480f, 480f), 0);
             //miniMap.position = Vector3.zero;
@@ -51,7 +53,7 @@ public class UIManager : MonoBehaviour
             startPan.parent.gameObject.SetActive(true);
             startPan.GetComponent<Image>().DOFade(0f, 0f).SetUpdate(true);
             touchedToStart = false;
-            // miniMap.position = new Vector2(-350f, -160f);
+            miniMap.position = new Vector2(-350f, -160f);
         }
 
     }
@@ -67,7 +69,6 @@ public class UIManager : MonoBehaviour
             posAchievementPan = achievementPan.anchoredPosition;
             posMenuPan = menuPan.anchoredPosition;
             posShopPan = shopPan.anchoredPosition;
-            
             ShowMenu();
         }
         if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -126,18 +127,19 @@ public class UIManager : MonoBehaviour
         miniMapCam.DOOrthoSize(5f, .5f);
 
     }
-    IEnumerator CRstartLevelFadeIn()
+/*    IEnumerator CRstartLevelFadeIn()
     {
 
         StartCoroutine(CRstartLevel());
-        miniMap.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-350f, -160f), 1f);
+        miniMap.GetComponent<RectTransform>().DOAnchorPos(posMiniMap, 1f);//new Vector2(-350f, -160f)
+        miniMap.parent = mapPlaceHolder;
         yield return new WaitForSecondsRealtime(2f);
         Debug.Log("co2");
         startPan.gameObject.SetActive(false);
         Time.timeScale = 1f;
 
 
-    }
+    }*/
 
     //If using input.touch to start level
     IEnumerator StartLevel()
@@ -159,8 +161,8 @@ public class UIManager : MonoBehaviour
         miniMap.GetChild(0).GetComponent<RectTransform>().DOSizeDelta(new Vector2(230f, 230f), 0.5f).SetUpdate(true);
         //miniMap.position = Vector3.zero;
         miniMapCam.DOOrthoSize(5f, .5f).SetUpdate(true);
-        miniMap.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-350f, -160f), 1f).SetUpdate(true);
-        
+        miniMap.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0f, 0f), 1f).SetUpdate(true);
+        miniMap.SetParent(mapPlaceHolder); //parent = mapPlaceHolder;
         yield return new WaitForSecondsRealtime(1f);
         startPan.parent.gameObject.SetActive(false);
 

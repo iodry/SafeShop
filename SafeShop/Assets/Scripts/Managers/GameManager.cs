@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(int levelIndex)
     {
         SceneManager.LoadScene(levelIndex);
-        Debug.Log("delegate" + levelIndex) ;
+        //Debug.Log("delegate" + levelIndex) ;
     }
 
     public void GotoMenu()

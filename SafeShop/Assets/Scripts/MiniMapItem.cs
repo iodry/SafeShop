@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MiniMapItem : MonoBehaviour
 {
-    public Transform item;
+    private Transform item;
     public Vector3 offset = new Vector3();
     // Start is called before the first frame update
     void Start()
     {
-        //item = transform.parent; 
+        item = transform.parent; 
     }
 
     // Update is called once per frame

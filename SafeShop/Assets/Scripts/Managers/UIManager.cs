@@ -102,7 +102,7 @@ public class UIManager : MonoBehaviour
 
     //For automatic start of level, use Nested Coroutines StartCoroutine(CRstartLevelFadeIn());
     //If using touch.Input to start level, set timeScale to 0 in Awake or Start function.
-    IEnumerator CRstartLevel()
+   /* IEnumerator CRstartLevel()
     {
         Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(1f);
@@ -126,7 +126,7 @@ public class UIManager : MonoBehaviour
         //miniMap.position = Vector3.zero;
         miniMapCam.DOOrthoSize(5f, .5f);
 
-    }
+    }*/
 /*    IEnumerator CRstartLevelFadeIn()
     {
 
@@ -208,11 +208,13 @@ public class UIManager : MonoBehaviour
     public void ShowPauseMenu()
     {
         //Debug.Log("Pause");
+        Time.timeScale = 0f;
         pausePan.DOAnchorPos(Vector2.zero, .2f).SetUpdate(true);
     }
     public void HidePauseMenu()
     {
         pausePan.DOAnchorPos(posPausePan, .2f).SetUpdate(true);//posPausePan
+        Time.timeScale = 1f;
     }
 
     public void ShowLevelComplete()

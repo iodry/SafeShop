@@ -12,6 +12,7 @@ public class InventoryUI : MonoBehaviour
     //private Transform inventoryPan;
     public GameObject messagePanel ;
     public GameObject popUpPanel;
+    public Button button;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +57,7 @@ public class InventoryUI : MonoBehaviour
         messagePanel.GetComponentInChildren<TextMeshProUGUI>().text = textMessage;
         messagePanel.GetComponent<Image>().DOFade(1, .5f);
         messagePanel.GetComponentInChildren<TextMeshProUGUI>().DOFade(1, .5f);
+        button.Select();
         //messagePanel.SetActive(true);
     }
     public void CloseMessagePanel()

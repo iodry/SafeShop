@@ -69,7 +69,7 @@ public class PlayerInteraction : MonoBehaviour
                 inventory.AddItem(itemInv);
                 //itemInv.OnPickup();
                 invPan.CloseMessagePanel();
-                invPan.PopUpPanel("Picked Up", .75f);
+                invPan.PopUpPanel("Picked Up", .75f, itemInv.Image);
                 itemInv = null;
             }
         }

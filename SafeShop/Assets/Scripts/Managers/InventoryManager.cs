@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class InventoryManager : MonoBehaviour
                 shoppingList[i].text = itemList[i].name;
                 shoppingList[i].enabled = true;
                 shoppingList[i].gameObject.SetActive(true);
+                shoppingList[i].GetComponentInChildren<Image>().sprite = itemList[i].GetComponent<Image>().sprite;
                // Debug.Log(shoppingList[i].text);
             }
             else

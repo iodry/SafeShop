@@ -76,7 +76,10 @@ public class InventoryUI : MonoBehaviour
     public void PopUpPanel(string textMessage, float displayTime)
     {
         popUpPanel.GetComponentInChildren<TextMeshProUGUI>().text = textMessage;
-        StartCoroutine(CoPopUp(displayTime));
+        popUpPanel.transform.GetChild(0).GetComponent<Image>().enabled = false;
+        //popUpPanel.transform.GetChild(0).GetComponent<Image>().sprite = null;
+        //popUpPanel.transform.GetChild(0).GetComponent<Image>().DOFade(0, .5f);
+        StartCoroutine(CoPopUp(displayTime, true));
 
     }
 
@@ -91,6 +94,10 @@ public class InventoryUI : MonoBehaviour
 
     IEnumerator CoPopUp(float time)
     {
+        if (popUpPanel.transform.GetChild(0).GetComponent<Image>().enabled == false)
+        {
+            popUpPanel.transform.GetChild(0).GetComponent<Image>().enabled = true;
+        }
         //popUpPanel.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0f, 400f), 1f);
         popUpPanel.GetComponent<Image>().DOFade(1, .5f);
         popUpPanel.transform.GetChild(0).GetComponent<Image>().DOFade(1, .5f);
@@ -102,10 +109,27 @@ public class InventoryUI : MonoBehaviour
         popUpPanel.GetComponent<Image>().DOFade(0, .5f);
         popUpPanel.transform.GetChild(0).GetComponent<Image>().DOFade(0, .5f);
         popUpPanel.GetComponentInChildren<TextMeshProUGUI>().DOFade(0, .5f);
+        //popUpPanel.transform.GetChild(0).GetComponent<Image>().sprite = null;
+        //popUpPanel.transform.GetChild(0).GetComponent<Image>().;
     }
-    // Update is called once per frame
-    void Update()
+
+    IEnumerator CoPopUp(float time, bool spriteLoad)
     {
-        
+        popUpPanel.GetComponent<Image>().DOFade(1, .5f);
+        //popUpPanel.transform.GetChild(0).GetComponent<Image>().DOFade(1, .5f);
+        popUpPanel.GetComponentInChildren<TextMeshProUGUI>().DOFade(1, .5f);
+        popUpPanel.GetComponent<RectTransform>().DOScale(1.5f, .25f);
+        if(spriteLoad)
+        {
+            popUpPanel.transform.GetChild(0).GetComponent<Image>().enabled = false;
+        }
+        else
+        {
+            popUpPanel.transform.GetChild(0).GetComponent<Image>().enabled = false;
+        }
+        yield return new WaitForSecondsRealtime(time);
+        popUpPanel.GetComponent<RectTransform>().DOScale(1f, .25f);
+        popUpPanel.GetComponent<Image>().DOFade(0, .5f);
+        popUpPanel.GetComponentInChildren<TextMeshProUGUI>().DOFade(0, .5f);
     }
 }

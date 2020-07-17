@@ -53,6 +53,7 @@ public class InventoryManager : MonoBehaviour
                 if (item.text == invItem.Name)
                 {
                     item.fontStyle = FontStyles.Strikethrough;
+                    item.color = Color.grey;
                     //Debug.Log(invItem.Name + " condi");
 
                 }
@@ -63,7 +64,7 @@ public class InventoryManager : MonoBehaviour
         if (itemList.Length - checkOutInvList.Count>0)
         {
             int remain = itemList.Length - checkOutInvList.Count;
-            invUI.PopUpPanel("Checked out - still " + remain + " to check out!", 1.5f);
+            invUI.PopUpPanel("Still " + remain + " to check out!", 1.5f);
         }
         else
         {

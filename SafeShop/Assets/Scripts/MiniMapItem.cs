@@ -20,7 +20,7 @@ public class MiniMapItem : MonoBehaviour
     void LateUpdate()
     {
         //Debug.Log(item.parent);
-        transform.position = item.position + offset - new Vector3(0, transform.position.y,0);
+       // transform.position = item.position + offset - new Vector3(0, transform.position.y,0);
         if (item.gameObject.activeSelf == false)
         {
             Destroy(transform.gameObject);

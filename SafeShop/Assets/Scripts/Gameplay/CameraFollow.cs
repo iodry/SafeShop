@@ -17,7 +17,7 @@ public class CameraFollow : MonoBehaviour
 
         camAngle += touchField.TouchDist.x * camAngleSpeed;
         transform.position = target.position + Quaternion.AngleAxis(camAngle, Vector3.up) * offset;
-        transform.rotation = Quaternion.LookRotation(target.position + Vector3.up -transform.position, Vector3.up - new Vector3(0, -90, 0));
+        transform.rotation = Quaternion.LookRotation(target.position + Vector3.up -transform.position, Vector3.up);
     }
 
 }

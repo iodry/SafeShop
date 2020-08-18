@@ -75,9 +75,9 @@ public class LevelSelector : MonoBehaviour
             //Debug.Log("LevelAt:" + levelData.levelAt);
             if (i<levelData.levelAt)
             {
-                int test = i+1;
+                int levelIndex = i+1;
                 icon.GetComponentInChildren<TextMeshProUGUI>().SetText("" + currentLevelCount);
-                icon.GetComponent<Button>().onClick.AddListener(()=>GameManager.instance.LoadLevel(test));
+                icon.GetComponent<Button>().onClick.AddListener(()=>GameManager.instance.LoadLevel(levelIndex, true));
                 //Debug.Log("currentLevelCount=" + currentLevelCount);
                 //Function check star nb
                 int countCheck = 0;

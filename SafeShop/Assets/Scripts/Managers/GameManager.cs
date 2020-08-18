@@ -186,6 +186,29 @@ public class GameManager : MonoBehaviour
         //Debug.Log("delegate" + levelIndex) ;
     }
 
+    public void LoadLevel(int levelIndex, bool loadingAnim)
+    {
+        if(loadingAnim)
+        {
+            StartCoroutine(LoadLevelAsynch(levelIndex));
+        }
+
+    }
+
+    IEnumerator LoadLevelAsynch (int levelIndex)
+    {
+        AsyncOperation aOp = SceneManager.LoadSceneAsync(levelIndex);
+        UIManager uiM = GetComponent<UIManager>();
+        uiM.ShowLoadingScreen();
+        while (!aOp.isDone)
+        {
+            float progress = Mathf.Clamp01(aOp.progress / .9f);
+            uiM.loadingSlider.value = progress;
+            uiM.loadingText.text = Math.Round(progress * 100) + "%";
+            yield return null;
+        }
+    }
+
     public void GotoMenu()
     {
         //StartCoroutine(goMenuCo());

@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour
     public Sprite starYellow;
     public Transform mapPlaceHolder;
 
+    public GameObject loadingPan;
+    public Slider loadingSlider;
+    public TextMeshProUGUI loadingText;
 
     //Position of each panel
     private Vector2 posSettingPan; //= new Vector2(-2000, 0);
@@ -302,5 +305,10 @@ public class UIManager : MonoBehaviour
     public void HideShoppingCard(RectTransform shopPan)
     {
         shopPan.DOAnchorPos(shopPanPos, .5f);
+    }
+
+    public void ShowLoadingScreen()
+    {
+        loadingPan.SetActive(true);
     }
 }

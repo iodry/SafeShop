@@ -38,6 +38,8 @@ public class UIManager : MonoBehaviour
     private Vector2 posMiniMap;
     private bool touchedToStart = false;
 
+    private Vector2 tempPos;
+
     private void Awake()
     {
         if (SceneManager.GetActiveScene().buildIndex <= 1)
@@ -270,9 +272,19 @@ public class UIManager : MonoBehaviour
         }*/
 
         currentPan.DOAnchorPos(vec, .5f);
-        menuPan.DOAnchorPos(Vector2.zero, .5f);
+        menuPan.DOAnchorPos(Vector2.zero, .5f).SetUpdate(true);
     }
 
+    public void ShowPanel(RectTransform currentPan)
+    {
+        tempPos = currentPan.anchoredPosition;
+        currentPan.DOAnchorPos(Vector2.zero, .5f).SetUpdate(true);
+    }
+    public void HidePanel(RectTransform currentPan)
+    {
+        currentPan.DOAnchorPos(tempPos, .5f).SetUpdate(true);
+        
+    }
     public void ShowStarLevel(int star)
     {
         if (star == 0)

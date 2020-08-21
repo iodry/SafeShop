@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public RectTransform levelComplete, gameOver, timesUp;
+    public RectTransform levelComplete, gameOver, timesUp, tutoPan;
     public RectTransform settingsPan;
     public RectTransform achievementPan;
     public RectTransform shopPan;
@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
             posShopPan = shopPan.anchoredPosition;
             ShowMenu();
         }
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
         }
         else if (SceneManager.GetActiveScene().name == "Credits")
@@ -91,7 +91,6 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Scene=" + SceneManager.GetActiveScene().buildIndex);
             if (pausePan!=null)
             {
                 posPausePan = pausePan.anchoredPosition;
@@ -170,14 +169,38 @@ public class UIManager : MonoBehaviour
         miniMap.SetParent(mapPlaceHolder); //parent = mapPlaceHolder;
         yield return new WaitForSecondsRealtime(1f);
         startPan.parent.gameObject.SetActive(false);
-
-
         Time.timeScale = 1f;
+    }
 
-        
+    IEnumerator StartLevel(bool tutoPanBool)
+    {
+        startPan.GetComponent<Image>().DOFade(0f, 1f).SetUpdate(true);
+        for (int i = 0; i < startPan.childCount; i++)
+        {
+            if (startPan.GetChild(i).GetComponent<TextMeshProUGUI>() != null)
+            {
+                startPan.GetChild(i).GetComponent<TextMeshProUGUI>().DOFade(0f, 2f).SetUpdate(true);
+            }
+            else if (startPan.GetChild(i).GetComponent<Image>() != null)
+            {
+                startPan.GetChild(i).GetComponent<Image>().DOFade(0f, 1f).SetUpdate(true);
+            }
+        }
+        miniMap.GetComponent<RectTransform>().DOSizeDelta(new Vector2(240f, 240f), .5f).SetUpdate(true);
+        miniMap.GetChild(0).GetComponent<RectTransform>().DOSizeDelta(new Vector2(230f, 230f), 0.5f).SetUpdate(true);
+        miniMapCam.DOOrthoSize(5f, .5f).SetUpdate(true);
+        miniMap.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0f, 0f), 1f).SetUpdate(true);
+        miniMap.SetParent(mapPlaceHolder); //parent = mapPlaceHolder;
+        yield return new WaitForSecondsRealtime(1f);
+        startPan.parent.gameObject.SetActive(false);
+        Time.timeScale = 0f;
+        ShowPanel(tutoPan);
+    }
 
-
-
+    public void HideTutoPan()
+    {
+        HidePanel(tutoPan);
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -190,7 +213,14 @@ public class UIManager : MonoBehaviour
             {
                 if (Input.touchCount > 0 | Input.GetMouseButtonDown(0))
                 {
-                    StartCoroutine(StartLevel());
+                    if (SceneManager.GetActiveScene().buildIndex == 2)
+                    {
+                        StartCoroutine(StartLevel(true));
+                    }
+                    else
+                    {
+                        StartCoroutine(StartLevel());
+                    }             
                     touchedToStart = true;
                 }
 

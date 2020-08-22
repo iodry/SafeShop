@@ -97,7 +97,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         // if moving to target position
         if (_lerp) {
             // prevent overshooting with values greater than 1
-            float decelerate = Mathf.Min(decelerationRate * Time.deltaTime, 1f);
+            float decelerate = Mathf.Min(decelerationRate * Time.fixedDeltaTime, 1f);
             _container.anchoredPosition = Vector2.Lerp(_container.anchoredPosition, _lerpTo, decelerate);
             // time to stop lerping?
             if (Vector2.SqrMagnitude(_container.anchoredPosition - _lerpTo) < 0.25f) {

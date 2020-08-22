@@ -8,7 +8,7 @@ public class SizeArea : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float xyz = GetComponentInParent<EnemyController>().lookRadius * ratioScale;
+        float xyz = GetComponentInParent<SphereCollider>().radius * ratioScale;
         transform.localScale = new Vector3(xyz, xyz, xyz);
     }
 }

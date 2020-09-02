@@ -62,6 +62,7 @@ public class EnemyController : MonoBehaviour
                     roamPosition = GetRoamingPostion();
                     // Debug.Log("New roam POS=" + roamPosition);
                 }
+                
                 //Use FindTarget to increase difficulty
                 //FindTarget();
                 //Debug.Log("ROAMING");

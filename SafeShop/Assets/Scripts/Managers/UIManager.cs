@@ -50,8 +50,8 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            miniMap.GetComponent<RectTransform>().DOAnchorPos(new Vector2(1600f, 500f), 0);
-            miniMap.GetComponent<RectTransform>().DOSizeDelta(new Vector2(500f, 500f), 0);
+            miniMap.GetComponent<RectTransform>().DOAnchorPos(new Vector2(Screen.width/2, 350f), 0);
+            miniMap.GetComponent<RectTransform>().DOSizeDelta(new Vector2(400f, 400f), 0);
             miniMap.GetChild(0).GetComponent<RectTransform>().DOSizeDelta(new Vector2(480f, 480f), 0);
             //miniMap.position = Vector3.zero;
             miniMapCam.DOOrthoSize(12f, 0);

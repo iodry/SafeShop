@@ -9,7 +9,7 @@ public class TitleLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<TextMeshProUGUI>().text = "LEVEL " + (SceneManager.GetActiveScene().buildIndex - 1) + "\n Tiny Shop";
+        GetComponent<TextMeshProUGUI>().text = "LEVEL " + (SceneManager.GetActiveScene().buildIndex - 1) ;
     }
 
 }

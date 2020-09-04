@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: c98d229ed0305ed4488f0a6f56b31deb
   - enabled: 1
+    path: Assets/Scenes/Level1ColorChart.unity
+    guid: 377854835af627a4099aef3513fab840
+  - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: c9ee2115c3a8c1c4188729861e79a1db
   - enabled: 1
@@ -29,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level6.unity
     guid: dcee77a49b3dbfd4f9df56ba0ce0c659
+  - enabled: 1
+    path: Assets/Scenes/MenuColorChart.unity
+    guid: 110b764595aeb534d939b838b96b1db0
   m_configObjects: {}

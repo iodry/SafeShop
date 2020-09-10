@@ -36,6 +36,7 @@ public class HealthManager : MonoBehaviour
         if(currentHealth<=0)
         {
             PlayerManager.instance.Die();
+            //AudioManager.instance.Play("Sneeze");
             GetComponent<GameManager>().Invoke("EndGame", 0.5f);//EndGame();
         }
     }

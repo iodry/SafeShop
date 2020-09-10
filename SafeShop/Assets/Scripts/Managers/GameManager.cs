@@ -96,8 +96,8 @@ public class GameManager : MonoBehaviour
             
             if (gameEnded == false)
             {
-
-               GetComponent<UIManager>().ShowGameOver();
+                AudioManager.instance.Play("Sneeze");
+                GetComponent<UIManager>().ShowGameOver();
                 gameEnded = true;
             }
         }

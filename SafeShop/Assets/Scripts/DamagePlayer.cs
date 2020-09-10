@@ -13,7 +13,6 @@ public class DamagePlayer : MonoBehaviour
         {
             FindObjectOfType<HealthManager>().DamagePlayer(damage);
             GetComponent<ThirdPersonCharacter>().Cough();
-            //Debug.Log("DAMAGE PLAYER");
         }
     }
 }

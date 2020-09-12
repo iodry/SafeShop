@@ -59,6 +59,10 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
+        if (inventory.mItems.Count > 0)
+        {
+            AudioManager.instance.Play("Checkout");
+        }
         inventory.mItems.Clear();
         invUI.RemoveItemsUI();
         if (itemList.Length - checkOutInvList.Count>0)

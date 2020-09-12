@@ -47,6 +47,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
-        Debug.Log("Source: " + name);
+        //Debug.Log("Source: " + name);
     }
 }
